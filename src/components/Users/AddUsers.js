@@ -4,7 +4,7 @@ import Button from '../UI/Button';
 import Card from '../UI/Card';
 import './addUser.css';
 
-export default function AddUsers() {
+export default function AddUsers(props) {
 
     const [username, setUsername] = useState('');
     const [userAge, setUserAge] = useState('');
@@ -14,7 +14,7 @@ export default function AddUsers() {
         if (username.trim().length === 0 || userAge.trim().length === 0  || +userAge < 1){
             return;
         }
-        console.log(userAge, username);
+        props.addUsers(username, userAge);
         setUserAge('');
         setUsername('');
     }
