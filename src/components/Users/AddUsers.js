@@ -1,3 +1,4 @@
+import Button from '../UI/Button';
 import  Card from '../UI/Card';
 import './addUser.css';
 
@@ -13,7 +14,7 @@ export default function AddUsers(){
             <input id="username" type="text"/>
             <label htmlFor="age">Enter Age (year) </label>
             <input id="age" type="number"/>
-            <button>Add User</button>
+            <Button>Add User</Button>
         </form>
         </Card>
     )
