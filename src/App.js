@@ -4,19 +4,22 @@ import './App.css';
 import AddUsers from './components/Users/AddUsers';
 import UserList from './components/Users/UserList';
 
+
 function App() {
 
   const [userList, setUserList] = useState([]);
+  const [nullCheck, setNullCheck] = useState(false);
 
   function addUsersHandler(uname, uage) {
-    setUserList((prevuserlist)=> {
-      return [...prevuserlist, {username: uname, userAge: uage, id:Math.random().toString()}]
+    setNullCheck(true);
+    setUserList((prevuserlist) => {
+      return [...prevuserlist, { username: uname, userAge: uage, id: Math.random().toString() }]
     })
   }
   return (
     <>
-      <AddUsers addUsers={addUsersHandler}/>
-      <UserList users={userList}/>
+      <AddUsers addUsers={addUsersHandler} />
+      {nullCheck && <UserList users={userList} />}
     </>
   )
 }
